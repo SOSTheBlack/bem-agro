@@ -45,7 +45,7 @@ class Helpers
             'activeMenuType' => array('sidenav-active-rounded'=>'sidenav-active-rounded','sidenav-active-square'=>'sidenav-active-square', 'sidenav-active-fullwidth'=>'sidenav-active-fullwidth'),
             'isFooterDark' => array(null, true, false),
             'isFooterFixed' => array(false, true),
-            'defaultLanguage'=>array('en'=>'en','fr'=>'fr','de'=>'de','pt'=>'pt'),
+            'defaultLanguage'=>array('en'=>'en','fr'=>'fr','de'=>'de','pt_BR'=>'pt_BR'),
             'direction' => array('ltr', 'rtl'),
         ];
 

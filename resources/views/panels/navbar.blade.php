@@ -59,12 +59,12 @@
             French
           </a>
         </li>
-        <li class="dropdown-item">
-          <a class="grey-text text-darken-1" href="{{url('lang/pt')}}" data-language="pt">
-            <i class="flag-icon flag-icon-pt"></i>
-            Portuguese
-          </a>
-        </li>
+          <li class="dropdown-item">
+              <a class="grey-text text-darken-1" href="{{url('lang/pt_BR')}}" data-language="pt_BR">
+                  <i class="flag-icon flag-icon-br"></i>
+                  Portuguese
+              </a>
+          </li>
         <li class="dropdown-item">
           <a class="grey-text text-darken-1" href="{{url('lang/de')}}" data-language="de">
             <i class="flag-icon flag-icon-de"></i>

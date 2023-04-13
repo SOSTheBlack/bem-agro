@@ -7,28 +7,37 @@ use Illuminate\Http\Request;
 
 class LocaleMiddleware
 {
+    private array $availLocale = [
+        'en' => 'en',
+        'fr' => 'fr',
+        'de' => 'de',
+        'pt_BR' => 'pt_BR',
+    ];
+
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param Request $request
+     * @param Closure $next
+     *
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): mixed
     {
-        // available language in template array
-        $availLocale = [
-            'en' => 'en',
-            'fr' => 'fr',
-            'de' => 'de',
-            'pt' => 'pt',
-        ];
-        // Locale is enabled and allowed to be changed
-        if (session()->has('locale') && array_key_exists(session()->get('locale'), $availLocale)) {
-            // Set the Laravel locale
-            app()->setLocale(session()->get('locale'));
-        }
+        $locale = $this->getLocale();
+
+        app()->setLocale($locale);
+        session()->put('locale', $locale);
 
         return $next($request);
+    }
+
+    private function getLocale(): string
+    {
+        if (session()->has('locale') && array_key_exists(session()->get('locale'), $this->availLocale)) {
+            return session()->get('locale');
+        }
+
+        return config('app.locale');
     }
 }

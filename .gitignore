@@ -10,6 +10,7 @@
 /storage/*.key
 /vendor
 /materialize-shell-scripts
+/.idea
 .env
 .env.backup
 .phpunit.result.cache

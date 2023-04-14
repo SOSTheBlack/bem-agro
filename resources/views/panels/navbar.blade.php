@@ -127,13 +127,13 @@
                 <li>
                     <a class="grey-text text-darken-1" href="#">
                         <i class="material-icons">lock_outline</i>
-                        Lock
+                        {{ __('Lock') }}
                     </a>
                 </li>
                 <li>
                     <a class="grey-text text-darken-1" href="#">
                         <i class="material-icons">keyboard_tab</i>
-                        Logout
+                        {{ __('Logout') }}
                     </a>
                 </li>
             </ul>

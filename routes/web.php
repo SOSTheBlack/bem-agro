@@ -17,10 +17,14 @@ use App\Http\Controllers\LanguageController;
 
 // Page Route
 // Route::get('/', [PageController::class, 'blankPage'])->middleware('verified');
-Route::get('/', [PageController::class, 'blankPage']);
 
-Route::get('/page-blank', [PageController::class, 'blankPage']);
-Route::get('/page-collapse', [PageController::class, 'collapsePage']);
+Route::middleware(['auth'])->group(function() {
+
+    ### TEMPLATE ###
+    Route::get('/', [PageController::class, 'blankPage']);
+    Route::get('/page-blank', [PageController::class, 'blankPage']);
+    Route::get('/page-collapse', [PageController::class, 'collapsePage']);
+});
 
 // locale route
 Route::get('lang/{locale}', [LanguageController::class, 'swap']);

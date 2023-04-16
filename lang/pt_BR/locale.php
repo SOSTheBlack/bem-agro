@@ -137,4 +137,3 @@ return[
     "GitHubController" => "GitHubController",
     "GitHub" => "GitHub",
 ];
-?>

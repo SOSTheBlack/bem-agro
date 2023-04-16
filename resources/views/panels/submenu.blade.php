@@ -13,7 +13,7 @@
         class="{{$custom_classes}} {{(request()->is($submenu->url.'*')) ? 'active '.$configData['activeMenuColor'] : '' }}"
         @if(!empty($configData['activeMenuColor'])) {{'style=background:none;box-shadow:none;'}} @endif
         target="{{isset($submenu->newTab) ? '_blank':''}}">
-        <i class="material-icons">radio_button_unchecked</i>
+        <i class="material-icons">{!! $submenu->icon !!}</i>
         <span>{{ __('locale.'.$submenu->name)}}</span>
       </a>
       @if (isset($submenu->submenu))

@@ -18,7 +18,7 @@
             "submenu": [
                 {
                     "url": "users/git-hub",
-                    "name": "Github",
+                    "name": "GitHub",
                     "i18n": "Github",
                     "slug": "Github",
                     "icon": "fa-github-alt"

@@ -135,5 +135,6 @@ return[
     "Page Collapse"=> "Recolher página",
     "Users" => "Usuários",
     "GitHubController" => "GitHubController",
+    "GitHub" => "GitHub",
 ];
 ?>

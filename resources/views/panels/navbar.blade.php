@@ -35,7 +35,7 @@
                     <a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);"
                        data-target="profile-dropdown">
             <span class="avatar-status avatar-online">
-              <img src="{{asset('images/avatar/avatar-7.png')}}" alt="avatar"><i></i>
+              <img src="{{ auth()->user()->avatar }}" alt="avatar"><i></i>
             </span>
                     </a>
                 </li>

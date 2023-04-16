@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Observers\UserObserver;
 use Database\Factories\UserFactory;
 use Eloquent;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -62,6 +63,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'avatar'
     ];
 
     /**
@@ -82,4 +84,14 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Register any events for your application.
+     */
+    public static function boot(): void
+    {
+        parent::boot();
+
+        User::observe(UserObserver::class);
+    }
 }

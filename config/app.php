@@ -190,8 +190,7 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
-        'Helper' => App\Helpers\Helpers::class,
+    'aliases' => Facade::defaultAliases()->merge(items: [
+        'Helper' => App\Helpers\MaterializeAdmin::class,
     ])->toArray(),
-
 ];

@@ -4,7 +4,7 @@ namespace App\Helpers;
 
 use Config;
 
-class Helpers
+class MaterializeAdmin
 {
     public static function applClasses()
     {
@@ -24,7 +24,7 @@ class Helpers
             'isFooterDark' => null,
             'isFooterFixed' => false,
             'templateTitle' => '',
-            'defaultLanguage'=>'en',
+            'defaultLanguage' => 'en',
             'largeScreenLogo' => 'images/logo/materialize-logo-color.png',
             'smallScreenLogo' => 'images/logo/materialize-logo.png',
             'direction' => env('MIX_CONTENT_DIRECTION', 'ltr'),
@@ -43,10 +43,10 @@ class Helpers
             'isNavbarFixed' => array(true, false),
             'isMenuDark' => array(null, true, false),
             'isMenuCollapsed' => array(true, false),
-            'activeMenuType' => array('sidenav-active-rounded'=>'sidenav-active-rounded','sidenav-active-square'=>'sidenav-active-square', 'sidenav-active-fullwidth'=>'sidenav-active-fullwidth'),
+            'activeMenuType' => array('sidenav-active-rounded' => 'sidenav-active-rounded', 'sidenav-active-square' => 'sidenav-active-square', 'sidenav-active-fullwidth' => 'sidenav-active-fullwidth'),
             'isFooterDark' => array(null, true, false),
             'isFooterFixed' => array(false, true),
-            'defaultLanguage'=>array('en'=>'en','fr'=>'fr','de'=>'de','pt_BR'=>'pt_BR'),
+            'defaultLanguage' => array('en' => 'en', 'fr' => 'fr', 'de' => 'de', 'pt_BR' => 'pt_BR'),
             'direction' => array('ltr', 'rtl'),
         ];
 
@@ -74,6 +74,7 @@ class Helpers
         if (empty($data['largeScreenLogo'])) {
             $data['largeScreenLogo'] = $dataDefault['largeScreenLogo'];
         }
+
         if (empty($data['smallScreenLogo'])) {
             $data['smallScreenLogo'] = $dataDefault['smallScreenLogo'];
         }
@@ -181,23 +182,25 @@ class Helpers
             'templateTitle' => $data['templateTitle'],
             'largeScreenLogo' => $data['largeScreenLogo'],
             'smallScreenLogo' => $data['smallScreenLogo'],
-            'defaultLanguage'=>$allOptions['defaultLanguage'][$data['defaultLanguage']],
+            'defaultLanguage' => $allOptions['defaultLanguage'][$data['defaultLanguage']],
             'mainFooterClass' => $mainFooterClass[$data['mainLayoutType']],
             'mainFooterColor' => $mainFooterColor[$data['mainLayoutType']],
             'direction' => $data['direction'],
         ];
-         // set default language if session hasn't locale value the set default language
-         if(!session()->has('locale')){
+
+        // set default language if session hasn't locale value the set default language
+        if (!session()->has('locale')) {
             app()->setLocale($layoutClasses['defaultLanguage']);
         }
 
-//         dd($layoutClasses);
         return $layoutClasses;
     }
+
     // updatesPageConfig function override all configuration of custom.php file as page requirements.
     public static function updatePageConfig($pageConfigs)
     {
         $demo = 'custom';
+
         if (isset($pageConfigs)) {
             if (count($pageConfigs) > 0) {
                 foreach ($pageConfigs as $config => $val) {

@@ -8,6 +8,17 @@ use App\Http\Controllers\LanguageController;
 // Page Route
 // Route::get('/', [PageController::class, 'blankPage'])->middleware('verified');
 
+
+echo '<img src="'. Avatar::create('Jean Garcia')->toBase64() .'">';
+
+dd(
+//    $var = Avatar::create('Joko Widodo')->toBase64();
+//    '<img src="{{ $user->getUrlfriendlyAvatar() }}" />';
+    Avatar::create('jeancesargarcia@gmail.com')->toGravatar(),
+    Avatar::create('Jean Garcia')->toSvg(),
+    Avatar::create('Jean Garcia')->toBase64(),
+);
+
 Route::middleware(['auth'])->group(function() {
     Route::prefix('users')->name('users.')->group(function() {
         Route::prefix('git-hub')->name('git-hub.')->group(function () {

@@ -134,6 +134,6 @@ return[
     "Child 2"=> "Criança 2",
     "Page Collapse"=> "Recolher página",
     "Users" => "Usuários",
-    "Github" => "Github",
+    "GitHubController" => "GitHubController",
 ];
 ?>

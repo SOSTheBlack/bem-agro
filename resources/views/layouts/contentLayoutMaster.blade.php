@@ -36,6 +36,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon/favicon-32x32.png">
     <script src="https://kit.fontawesome.com/846a7a1872.js" crossorigin="anonymous"></script>
     {{-- Include core + vendor Styles --}}
+    @livewireStyles
     @include('panels.styles')
 
 </head>
@@ -50,5 +51,6 @@ License: You must have a valid license purchased only from themeforest(the above
     {{-- if mainLaoutType is empty or not set then its print below line  --}}
     <h1>{{'mainLayoutType Option is empty in config custom.php file.'}}</h1>
 @endif
-
+@livewireScripts
+<script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
 </html>

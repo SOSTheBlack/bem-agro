@@ -35,6 +35,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="https://kit.fontawesome.com/846a7a1872.js" crossorigin="anonymous"></script>
 
     <!-- Include core + vendor Styles -->
+    @livewireStyles
     @include('panels.styles')
 
 </head>
@@ -54,6 +55,8 @@ License: You must have a valid license purchased only from themeforest(the above
     </div>
 </div>
 {{-- vendor scripts and page scripts included --}}
+@livewireScripts
+<script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
 @include('panels.scripts')
 
 </body>

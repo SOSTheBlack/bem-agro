@@ -28,6 +28,7 @@
       @endif
       @endif
 
+{{--        @dd($configData, $breadcrumbs)--}}
 
       @if($configData["pageHeader"] === true && isset($breadcrumbs))
       {{--  breadcrumb --}}
@@ -36,7 +37,8 @@
       <div class="col s12">
         <div class="container">
           {{-- main page content --}}
-          @yield('content')
+{{--          @yield('content')--}}
+            {{$slot}}
           {{-- right sidebar --}}
           @include('pages.sidebar.right-sidebar')
         </div>

@@ -33,6 +33,7 @@ class Helpers
         // if any key missing of array from custom.php file it will be merge and set a default value from dataDefault array and store in data variable
         $data = array_merge($dataDefault, config('custom.custom'));
 
+
         // all available option of materialize template
         $allOptions = [
             'mainLayoutType' => array('vertical-modern-menu', 'vertical-menu-nav-dark', 'vertical-gradient-menu', 'vertical-dark-menu', 'horizontal-menu'),
@@ -189,6 +190,8 @@ class Helpers
          if(!session()->has('locale')){
             app()->setLocale($layoutClasses['defaultLanguage']);
         }
+
+//         dd($layoutClasses);
         return $layoutClasses;
     }
     // updatesPageConfig function override all configuration of custom.php file as page requirements.

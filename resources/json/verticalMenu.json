@@ -6,8 +6,7 @@
             "i18n": "Dashboard",
             "class": "waves-effect waves-cyan",
             "icon": "dashboard",
-            "slug": "dashboard",
-            "newTab": "_blank"
+            "slug": "dashboard"
         },
         {
             "url": "javascript:void(0)",
@@ -18,7 +17,7 @@
             "slug": "",
             "submenu": [
                 {
-                    "url": "javascript:void(0)",
+                    "url": "users/git-hub",
                     "name": "Github",
                     "i18n": "Github",
                     "slug": "Github",

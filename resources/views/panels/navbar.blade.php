@@ -131,10 +131,14 @@
                     </a>
                 </li>
                 <li>
-                    <a class="grey-text text-darken-1" href="#">
-                        <i class="material-icons">keyboard_tab</i>
-                        {{ __('Logout') }}
-                    </a>
+                    <form action="{{ route('logout') }}" method="post" id="logout">
+                        @csrf
+                        <a type="submit" class="grey-text text-darken-1" onclick="document.getElementById('logout').submit();">
+                            <i class="material-icons">keyboard_tab</i>
+                            {{ __('Logout') }}
+                        </a>
+                    </form>
+
                 </li>
             </ul>
         </div>

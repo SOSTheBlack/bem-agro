@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Users\GitHub;
 
+use App\Http\Controllers\Users\UserController;
 use Livewire\Component;
 
-abstract class GitHubController extends Component
+abstract class GitHubController extends UserController
 {
-    public function boot(): void
-    {
-        view()->share('breadcrumbs', $this->breadcrumbs());
-    }
+
 }

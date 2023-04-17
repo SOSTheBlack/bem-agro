@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Users\GitHub;
 
-use App\Repositories\Contracts\UserRepository;
+use App\Repositories\Contracts\GitHubUserRepository;
 use Illuminate\View\View;
 
 use Livewire\WithPagination;
@@ -12,11 +12,11 @@ final class ListController extends GitHubController
 {
     use WithPagination;
 
-    public function render(UserRepository $userRepository): View
-    {
-//        dd($userRepository->paginate());
+    protected string $paginationTheme = 'materialize';
 
-        return view('pages.users.git-hub.list', ['gitHubUsers' => $userRepository->paginate()]);
+    public function render(GitHubUserRepository $gitHubUserRepository): View
+    {
+        return view('pages.users.git-hub.list', ['gitHubUsers' => $gitHubUserRepository->paginate()]);
     }
 
     protected function breadcrumbs(): array

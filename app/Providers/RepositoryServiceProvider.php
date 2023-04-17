@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Repositories\Contracts\GitHubUserRepository;
 use App\Repositories\Contracts\UserRepository;
+use App\Repositories\Eloquent\GitHubUserEloquent;
 use App\Repositories\Eloquent\UserRepositoryEloquent;
 use Illuminate\Support\ServiceProvider;
 
@@ -13,9 +15,10 @@ class RepositoryServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->bind(UserRepository::class, UserRepositoryEloquent::class);
+        $this->app->bind(GitHubUserRepository::class, GitHubUserEloquent::class);
     }
 
     /**
@@ -23,7 +26,7 @@ class RepositoryServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         //
     }

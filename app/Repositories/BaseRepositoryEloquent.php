@@ -60,7 +60,7 @@ abstract class BaseRepositoryEloquent
     {
 //        $this->applyCriteria();
 //        $this->applyScope();
-        $limit = is_null($limit) ? 15 : $limit;
+        $limit = is_null($limit) ? 12 : $limit;
         $results = $this->model->{$method}($limit, $columns);
         $results->appends(app('request')->query());
 

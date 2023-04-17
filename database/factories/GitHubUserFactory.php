@@ -18,7 +18,7 @@ class GitHubUserFactory extends Factory
     public function definition(): array
     {
         return [
-            'ref_id' => $this->faker->randomNumber(10),
+            'ref_id' => $this->faker->randomNumber(5, true),
             'username' => $this->faker->userName(),
             'full_name' => $this->faker->name(),
             'avatar_url' => $this->faker->imageUrl(),

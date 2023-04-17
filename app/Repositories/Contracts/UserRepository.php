@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Contracts;
 
-interface UserRepository
+interface UserRepository extends RepositoryEloquentContract
 {
 
 }

@@ -20,8 +20,8 @@ final class ListController extends GitHubController
     protected function breadcrumbs(): array
     {
         return [
-            ['link' => "/", 'name' => __('Dashboard')],
-            ['link' => "javascript:void(0)", 'name' => __('Users')],
+            ['link' => route('dashboard'), 'name' => __('Dashboard')],
+            ['name' => __('Users')],
             ['name' => __("GitHub")],
         ];
     }

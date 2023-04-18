@@ -146,5 +146,8 @@
     "Already have an account? Login": "já tem uma conta? Entrar!",
     "You can reset your password": "Você pode redefinir sua senha",
     "Welcome": "Bem-vindo(a)",
-    "You do not have any registered user": "Você não possui nenhum usuário cadastrado"
+    "You do not have any registered user": "Você não possui usuário cadastrado",
+    "New register": "Novo cadastro",
+    "Search": "Pesquisar",
+    "Type to search": "Digite para pesquisar"
 }

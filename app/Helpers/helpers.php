@@ -7,7 +7,7 @@ if (!function_exists('getAvatar')) {
      *
      * @return string
      */
-    function getAvatar(string $email, string $fullName): string
+    function getAvatar(string $email, string $fullName = 'BemAgro'): string
     {
         if (Gravatar::exists($email)) {
             return Gravatar::get($email);

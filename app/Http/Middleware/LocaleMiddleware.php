@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Pluralizer;
 
 class LocaleMiddleware
 {
@@ -29,6 +30,8 @@ class LocaleMiddleware
         app()->setLocale($locale);
         session()->put('locale', $locale);
 
+        Pluralizer::useLanguage($this->setPluralize($locale));
+
         return $next($request);
     }
 
@@ -39,5 +42,14 @@ class LocaleMiddleware
         }
 
         return config('app.locale');
+    }
+
+    private function setPluralize($locale): string
+    {
+        if ($locale === 'pt_BR') {
+            return 'portuguese';
+        }
+
+        return 'english';
     }
 }

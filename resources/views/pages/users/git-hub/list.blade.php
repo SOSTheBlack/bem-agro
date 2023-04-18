@@ -1,8 +1,14 @@
 @section('title', __('GitHub'))
 
-
 <div class="section">
     <div class="row card">
+
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large red">
+                <i class="large material-icons">add</i>
+            </a>
+        </div>
+
         <form class="col s12">
             <div class="input-field col s12">
                 <input id="first_name" type="text" class="validate">
@@ -24,7 +30,6 @@
                 </div>
             </div>
         @endforeach
-
         <div class="col s12 right-align vertical-align-bottom">{{ $gitHubUsers->links() }}</div>
     </div>
 </div>

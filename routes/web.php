@@ -5,8 +5,6 @@ use App\Http\Controllers\Users\GitHub\ListController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
 
-//dd(trans('Password'));
-
 Route::middleware(['auth'])->group(function() {
     Route::get('/')->uses(DashboardController::class);
 

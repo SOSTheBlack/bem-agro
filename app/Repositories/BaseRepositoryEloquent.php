@@ -59,8 +59,6 @@ abstract class BaseRepositoryEloquent implements RepositoryEloquentContract
      */
     public function paginate(?int $limit = null, array $columns = ['*'], string $method = "paginate"): mixed
     {
-//        $this->applyCriteria();
-//        $this->applyScope();
         $limit = is_null($limit) ? 12 : $limit;
         $results = $this->model->{$method}($limit, $columns);
         $results->appends(app('request')->query());
@@ -68,6 +66,22 @@ abstract class BaseRepositoryEloquent implements RepositoryEloquentContract
         $this->resetModel();
 
         return $results;
+    }
+
+    /**
+     * Retrieve first data of repository, or create new Entity
+     *
+     * @param array $attributes
+     *
+     * @return mixed
+     */
+    public function firstOrCreate(array $attributes = []): Model
+    {
+        $model = $this->model->firstOrCreate($attributes);
+
+        $this->resetModel();
+
+        return $model;
     }
 
     public function resetModel(): void

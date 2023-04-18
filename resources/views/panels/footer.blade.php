@@ -1,16 +1,16 @@
 <!-- BEGIN: Footer-->
-{{--<footer--}}
-{{--  class="{{$configData['mainFooterClass']}} @if($configData['isFooterFixed']=== true){{'footer-fixed'}}@else {{'footer-static'}} @endif @if($configData['isFooterDark']=== true) {{'footer-dark'}} @elseif($configData['isFooterDark']=== false) {{'footer-light'}} @else {{$configData['mainFooterColor']}} @endif">--}}
-{{--  <div class="footer-copyright">--}}
-{{--    <div class="container">--}}
-{{--      <span>&copy; 2019 <a href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent"--}}
-{{--          target="_blank">PIXINVENT</a> All rights reserved.--}}
-{{--      </span>--}}
+<footer
+  class="{{$configData['mainFooterClass']}} @if($configData['isFooterFixed']=== true){{'footer-fixed'}}@else {{'footer-static'}} @endif @if($configData['isFooterDark']=== true) {{'footer-dark'}} @elseif($configData['isFooterDark']=== false) {{'footer-light'}} @else {{$configData['mainFooterColor']}} @endif">
+  <div class="footer-copyright">
+    <div class="container">
+      <span>&copy; {{ Date::now()->year }} <a href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent"
+          target="_blank">BemAgro</a> {{ __('All rights reserved.') }}
+      </span>
 {{--      <span class="right hide-on-small-only">--}}
-{{--        Design and Developed by <a href="https://pixinvent.com/">PIXINVENT</a>--}}
+{{--        Design PIXINVENT | Engineer by <a href="https://github.com/SOSTheBlack" target="_blank">SOSTheBlack</a>--}}
 {{--      </span>--}}
-{{--    </div>--}}
-{{--  </div>--}}
-{{--</footer>--}}
+    </div>
+  </div>
+</footer>
 
 <!-- END: Footer-->

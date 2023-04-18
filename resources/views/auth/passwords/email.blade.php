@@ -29,8 +29,8 @@
 
       <div class="row">
         <div class="input-field col s12">
-          <h5 class="ml-4">Forgot Password</h5>
-          <p class="ml-4">You can reset your password</p>
+          <h5 class="ml-4">{{ __('Forgot Password') }}</h5>
+          <p class="ml-4">{{ __('You can reset your password') }}</p>
         </div>
       </div>
       <div class="row">
@@ -49,16 +49,15 @@
       <div class="row">
         <div class="input-field col s12">
           <button type="submit"
-            class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12 mb-1">Reset
-            Password</button>
+            class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12 mb-1">{{ __('Reset Password') }}</button>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6 m6 l6">
-          <p class="margin medium-small"><a href="{{ route('login')}}">Login</a></p>
+          <p class="margin medium-small"><a href="{{ route('login')}}">{{ __('Login') }}</a></p>
         </div>
         <div class="input-field col s6 m6 l6">
-          <p class="margin right-align medium-small"><a href="{{route('register')}}">Register</a></p>
+          <p class="margin right-align medium-small"><a href="{{route('register')}}">{{ __('Register') }}</a></p>
         </div>
       </div>
     </form>

@@ -132,6 +132,8 @@ return[
     "Second level 3"=> "Segundo nível 3",
     "Child 1"=> "Criança 1",
     "Child 2"=> "Criança 2",
-    "Page Collapse"=> "Recolher página"
+    "Page Collapse"=> "Recolher página",
+    "Users" => "Usuários",
+    "GitHubController" => "GitHubController",
+    "GitHub" => "GitHub",
 ];
-?>

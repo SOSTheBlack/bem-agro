@@ -134,5 +134,20 @@
     "Help": "Suporte",
     "Block": "Bloquear",
     "Portuguese": "Português",
-    "Lock": "Bloquear"
+    "Lock": "Bloquear",
+    "password": "Senha",
+    "Password again": "Confirmar senha",
+    "Full name": "Nome completo",
+    "Sign in": "Acessar",
+    "Register Now": "Cadastrar-se",
+    "Forgot Password": "Esqueceu sua senha",
+    "Forgot password": "Esqueceu sua senha",
+    "Join to our community now": "Junte-se à nossa comunidade agora",
+    "Already have an account? Login": "já tem uma conta? Entrar!",
+    "You can reset your password": "Você pode redefinir sua senha",
+    "Welcome": "Bem-vindo(a)",
+    "You do not have any registered user": "Você não possui usuário cadastrado",
+    "New register": "Novo cadastro",
+    "Search": "Pesquisar",
+    "Type to search": "Digite para pesquisar"
 }

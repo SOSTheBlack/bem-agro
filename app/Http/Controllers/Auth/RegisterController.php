@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -41,10 +42,19 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function showRegistrationForm()
+    {
+        $pageConfigs = ['bodyCustomClass' => 'register-bg', 'isCustomizer' => false];
+
+        return view('/auth/register', [
+            'pageConfigs' => $pageConfigs
+        ]);
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -56,11 +66,13 @@ class RegisterController extends Controller
         ]);
     }
 
+    // Register
+
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
-     * @return \App\Models\User
+     * @param array $data
+     * @return User
      */
     protected function create(array $data)
     {
@@ -71,13 +83,16 @@ class RegisterController extends Controller
         ]);
     }
 
-    // Register
-    public function showRegistrationForm()
+    /**
+     * The user has been registered.
+     *
+     * @param Request $request
+     * @param mixed $user
+     *
+     * @return mixed
+     */
+    protected function registered(Request $request, $user)
     {
-        $pageConfigs = ['bodyCustomClass' => 'register-bg', 'isCustomizer' => false];
-
-        return view('/auth/register', [
-            'pageConfigs' => $pageConfigs
-        ]);
+        session()->flash('welcome');
     }
 }

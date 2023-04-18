@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class LanguageController extends Controller
 {
     // set locale in session
@@ -15,10 +13,12 @@ class LanguageController extends Controller
             'de'=>'de',
             'pt_BR'=>'pt_BR',
         ];
+
         // check for existing language
         if (array_key_exists($locale, $availLocale)) {
             session()->put('locale', $locale);
         }
+
         return redirect()->back();
     }
 }

@@ -1,26 +1,20 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Users\GitHub\{ListController, NewController};
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
 use App\Http\Controllers\LanguageController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::middleware(['auth'])->group(function() {
+    Route::get('/')->name('dashboard')->uses(DashboardController::class);
 
-// Page Route
-// Route::get('/', [PageController::class, 'blankPage'])->middleware('verified');
-Route::get('/', [PageController::class, 'blankPage']);
-
-Route::get('/page-blank', [PageController::class, 'blankPage']);
-Route::get('/page-collapse', [PageController::class, 'collapsePage']);
+    Route::prefix('users')->name('users.')->group(function() {
+        Route::prefix('git-hub')->name('git-hub.')->group(function () {
+            Route::get('/')->name('list')->uses(ListController::class);
+            Route::get('/new')->name('new')->uses(NewController::class);
+        });
+    });
+});
 
 // locale route
 Route::get('lang/{locale}', [LanguageController::class, 'swap']);

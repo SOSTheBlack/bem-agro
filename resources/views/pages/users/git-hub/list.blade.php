@@ -15,7 +15,7 @@
                 <label for="first_name">{{ __('Search') }}</label>
             </div>
         </form>
-        @foreach($gitHubUsers as $gitHubUser)
+        @forelse($gitHubUsers as $gitHubUser)
             <div class="col s12 m2">
                 <div class="card">
                     <div class="card-image">
@@ -29,7 +29,13 @@
                     </div>
                 </div>
             </div>
-        @endforeach
+            @empty
+            <div class="col s12">
+                    <div class="card-content">
+                        <h4 class="center">{{ 'Você não possui nenhum usuário cadastrado' }}</h4>
+                    </div>
+            </div>
+            @endforelse
         <div class="col s12 right-align vertical-align-bottom">{{ $gitHubUsers->links() }}</div>
     </div>
 </div>

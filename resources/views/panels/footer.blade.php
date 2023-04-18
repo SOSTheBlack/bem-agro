@@ -3,7 +3,7 @@
   class="{{$configData['mainFooterClass']}} @if($configData['isFooterFixed']=== true){{'footer-fixed'}}@else {{'footer-static'}} @endif @if($configData['isFooterDark']=== true) {{'footer-dark'}} @elseif($configData['isFooterDark']=== false) {{'footer-light'}} @else {{$configData['mainFooterColor']}} @endif">
   <div class="footer-copyright">
     <div class="container">
-      <span>&copy; {{ Date::now()->year }} <a href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent"
+      <span>&copy; {{ Date::now()->year }} <a href="https://www.bemagro.com/home"
           target="_blank">BemAgro</a> {{ __('All rights reserved.') }}
       </span>
 {{--      <span class="right hide-on-small-only">--}}

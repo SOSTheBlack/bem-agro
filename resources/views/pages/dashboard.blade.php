@@ -16,6 +16,6 @@
 @section('page-script')
     <script>
         // 'rounded' is the class I'm applying to the toast
-        M.toast({html: '{{ __('Welcome') }} {{ auth()->user()->name }}', classes: 'green left'});
+        M.toast({html: '{{ __('Welcome') }} {{ auth()->user()->name }}', classes: 'green left', inDuration: 1000});
     </script>
 @endsection

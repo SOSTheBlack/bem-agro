@@ -27,7 +27,8 @@ class GitHubUserFactory extends Factory
             'public_gists' => $this->faker->numerify(),
             'followers' => $this->faker->numerify(),
             'following' => $this->faker->numerify(),
-            'start_at' => $this->faker->date()
+            'start_at' => $this->faker->date(),
+            'bio' => $this->faker->text()
         ];
     }
 }

@@ -12,8 +12,6 @@ final class ListController extends GitHubController
 {
     use WithPagination;
 
-    protected string $paginationTheme = 'materialize';
-
     public function render(GitHubUserRepository $gitHubUserRepository): View
     {
         return view('pages.users.git-hub.list', ['gitHubUsers' => $gitHubUserRepository->paginate()]);

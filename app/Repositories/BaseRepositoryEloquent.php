@@ -2,13 +2,14 @@
 
 namespace App\Repositories;
 
+use App\Repositories\Contracts\RepositoryEloquentContract;
 use App\Repositories\Exceptions\RepositoryException;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
-abstract class BaseRepositoryEloquent
+abstract class BaseRepositoryEloquent implements RepositoryEloquentContract
 {
     protected Model $model;
     protected Application $app;
